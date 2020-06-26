@@ -15,8 +15,8 @@ COPY .gitignore /
 COPY requirements.txt /
 COPY visualizations.py /
 COPY __init__.py /
-
+COPY check.mp4 /
 COPY requirements.txt /
 RUN pip install -r requirements.txt
 
-RUN applications/model_wrapper.py
+RUN applications/cam.py ./check.mp4 ./check1.mp4 --fourcc XVID
