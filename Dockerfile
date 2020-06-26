@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 FROM python:3.7
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 COPY applications / applications /
 COPY configs / configs /
@@ -19,4 +20,4 @@ COPY check.mp4 /
 COPY requirements.txt /
 RUN pip install -r requirements.txt
 
-RUN applications/video.py ./check.mp4 ./check1.mp4 --fourcc XVID --fps 30
+CMD applications/video.py ./check.mp4 ./check1.mp4 --fourcc XVID --fps 30
