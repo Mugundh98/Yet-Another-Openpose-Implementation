@@ -20,4 +20,5 @@ COPY check.mp4 /
 COPY requirements.txt /
 RUN pip install -r requirements.txt
 
+RUN chmod +x applications/video.py
 CMD applications/video.py ./check.mp4 ./check1.mp4 --fourcc XVID --fps 30
